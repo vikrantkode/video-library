@@ -1,0 +1,40 @@
+:root {
+  --white-color: white;
+  --header-style-color:black;
+}
+.header {
+  grid-area: head;
+  padding: 0px 0 0 28px;
+  box-shadow: 0 0 10px 0 rgb(27, 27, 27);
+}
+
+.header_style{
+  background-color: var(--white-color);
+  
+}
+.text_style{
+  color : var(--header-style-color);
+}
+
+.header_name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header_name > a {
+  text-decoration: none;
+}
+
+.input_box {
+  display: inline-block;
+}
+
+ #btn_style{
+  border: 1px solid var(--default-color);
+  background-color: var(--header-style-color);
+  color: var(--white-color);
+}
+
+

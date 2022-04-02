@@ -1,0 +1,67 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css%22");
+
+.container_home {
+    display: grid;
+    /* gap: 20px; */
+  
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      /* "head     head    head    head    head    head    head    head  "
+      "section  section section section section section section section"
+      "......   main    main    main    main    main    main    ......"
+      "......   main    main    main    main    main    main    ......"
+      "......   main    main    main    main    main    main    ......"
+      "......   main    main    main    main    main    main    ......"
+      "footer   footer  footer  footer  footer  footer  footer  footer"; */
+      "head head head head"
+      "section section section section"
+      ". main main ."
+      ". main main ."
+      "footer footer footer footer"
+  
+  }
+
+  .hero_img_container{
+      grid-area: section;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+      position: relative;
+      height: 80vh;
+  }
+
+  .hero_img_width{
+      width: 100%;
+      height: 100%;
+      filter: blur(2px);
+      object-fit: cover;
+      object-position: top;
+  }
+
+  
+.hero_image_content {
+    position: absolute;
+    display: block;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .main_tagline {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: 1rem;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+  }
+
+  .sub_tagline{
+    color: white;
+    text-shadow: 2px 2px 5px black;
+  }
+
+
+  
