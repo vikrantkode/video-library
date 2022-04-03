@@ -1,0 +1,42 @@
+.container_sidebar {
+    /* grid-area: sidebar; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar_nav {
+    width: 12rem;
+}
+
+.sidebar_nav_icons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    margin-bottom: 0.5rem;
+    font-weight:bold;
+}
+
+.sidebar_nav_icons:hover {
+    background-color: rgb(231, 227, 227);
+    border-radius: 0.4rem;
+}
+
+.sidebar_nav_icons_name {
+    padding-left: 2rem;
+}
+
+.container_main {
+    flex-direction: row;
+}
+
+.list-style {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(85, 76, 76);
+}

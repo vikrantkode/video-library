@@ -5,23 +5,131 @@
 
 export const videos = [
   {
-    _id: "qkxuFKqJXWY",
-    title: "Roommate - Stand Up Comedy Ft. Anubhav Singh Bassi",
-    category: "Standup",
+    _id: "T2VnA5-RxXA",
+    title: "10 ACCESSORIES MEN MUST HAVE !",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "2"
   },
   {
-    _id: "AmVZSBOrhCI",
-    title: "Masakali Delhi bollywoodlofi",
-    category: "Lofi",
+    _id: "8pt03Y7CbFI",
+    title: "Fashion Accessories Every Guy Needs",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "6"
   },
   {
-    _id: "BkU4o3vPxwY",
-    title: "Worst Air Disaster in China | Boeing 737 Plane Crash | Dhruv Rathee",
-    category: "Dailynews",
+    _id: "RLwu8NBGh4Y",
+    title: "How To Choose Accessories📿 For Men | Fashion Guide |",
+    category: "Accessories",
+    duration: "7:14",
+    views: "25k",
+    uploaded : "12"
   },
   {
-    _id: "qkxuFKqJXWY",
-    title: "Roommate - Stand Up Comedy Ft. Anubhav Singh Bassi",
-    category: "Standup",
+    _id: "G0QGLff0z_Y",
+    title: "Watch This Before You Buy Ray-Ban Sunglasses",
+    category: "Review",
+    duration: "3:18",
+    views: "434k",
+    uploaded : "9"
+  },
+  {
+    _id: "T2VnA5-RxXA",
+    title: "10 ACCESSORIES MEN MUST HAVE !",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "2"
+  },
+  {
+    _id: "8pt03Y7CbFI",
+    title: "Fashion Accessories Every Guy Needs",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "6"
+  },
+  {
+    _id: "RLwu8NBGh4Y",
+    title: "How To Choose Accessories📿 For Men | Fashion Guide |",
+    category: "Accessories",
+    duration: "7:14",
+    views: "25k",
+    uploaded : "12"
+  },
+  {
+    _id: "G0QGLff0z_Y",
+    title: "Watch This Before You Buy Ray-Ban Sunglasses",
+    category: "Review",
+    duration: "3:18",
+    views: "434k",
+    uploaded : "9"
+  },
+  {
+    _id: "T2VnA5-RxXA",
+    title: "10 ACCESSORIES MEN MUST HAVE !",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "2"
+  },
+  {
+    _id: "8pt03Y7CbFI",
+    title: "Fashion Accessories Every Guy Needs",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "6"
+  },
+  {
+    _id: "RLwu8NBGh4Y",
+    title: "How To Choose Accessories📿 For Men | Fashion Guide |",
+    category: "Accessories",
+    duration: "7:14",
+    views: "25k",
+    uploaded : "12"
+  },
+  {
+    _id: "G0QGLff0z_Y",
+    title: "Watch This Before You Buy Ray-Ban Sunglasses",
+    category: "Review",
+    duration: "3:18",
+    views: "434k",
+    uploaded : "9"
+  },
+  {
+    _id: "T2VnA5-RxXA",
+    title: "10 ACCESSORIES MEN MUST HAVE !",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "2"
+  },
+  {
+    _id: "8pt03Y7CbFI",
+    title: "Fashion Accessories Every Guy Needs",
+    category: "Accessories",
+    duration: "20:39",
+    views: "1.6M",
+    uploaded : "6"
+  },
+  {
+    _id: "RLwu8NBGh4Y",
+    title: "How To Choose Accessories📿 For Men | Fashion Guide |",
+    category: "Accessories",
+    duration: "7:14",
+    views: "25k",
+    uploaded : "12"
+  },
+  {
+    _id: "G0QGLff0z_Y",
+    title: "Watch This Before You Buy Ray-Ban Sunglasses",
+    category: "Review",
+    duration: "3:18",
+    views: "434k",
+    uploaded : "9"
   },
 ];

@@ -4,21 +4,12 @@
     --card-subheadcolor:gray ;
 }
 
-
-.parent{ 
-    /* grid-area: main; */
-    margin-top: 4rem;
-    width: 20rem;
-    border-radius: 0.5rem; 
-    flex-direction: column; 
-    box-shadow: 2px 2px 10px var(--shadow-color);
-}
-
 .card {
+    width: 20rem;
     display: flex;
     align-items: center;
-    flex-grow: 1;
     flex-direction: column;
+    /* box-shadow: 2px 2px 10px var(--shadow-color); */
 }
 
 .card:hover{
@@ -31,8 +22,8 @@
     border-top-right-radius: 0.5rem;
 }
 .title {
-    margin-left: 2rem;
-    margin-top: 1rem;
+    margin-left: 0.5rem;
+    /* margin-top: 0.5rem; */
   
 }
 
@@ -46,20 +37,19 @@
 }
 
 .content{
-    margin-left: 2rem;
+    margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
 }
 
-.footer{
+.card_footer{
     display: flex;
-    margin-bottom: 10px;
     justify-content: space-around;  
     border: none;
-    flex-wrap: wrap;
+    align-items: center;
 }
-.footer__buttons{
+.footer_info{
     display: flex;
     justify-content: space-around;
     margin-left:auto ;
@@ -67,28 +57,17 @@
 .btn-footer{
     font-size:large;
     font-weight: 100;
-    margin-right: 1.5rem; 
-    border: none; 
-    background-color: var(--hover-color);
-    padding: 0rem;
-    cursor: pointer;
+    margin-right: 1rem; 
 }
 .btn-footer:hover{
     background-color: var(--hover-color);
 
 }
-.footer__icons{
-    font-size: 2rem;
+.footer_icons{
+    font-size: 2rem;   
+}
+
+.vicons{
+    margin-right: 0.5rem;
     cursor: pointer;
-}
-
-.card__icons:hover{
-    background-color: var(--hover-color);
-    border-radius: 50px;
-   
-}
-
-.card__icons{
-    font-size: smaller;
-    margin: 1rem;
 }
