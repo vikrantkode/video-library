@@ -16,7 +16,6 @@ const ViCard = ({video}) => {
             <div className="content">
             <i style={{color:"red"}} className="bi bi-bookmark"></i>
                 <i className="bi bi-bookmark-fill"></i>
-                {/* <p className="content__color">Visit ten places on our planet that are undergoing the biggest change today.</p> */}
             </div>
         </div>
        

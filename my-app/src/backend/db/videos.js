@@ -19,4 +19,9 @@ export const videos = [
     title: "Worst Air Disaster in China | Boeing 737 Plane Crash | Dhruv Rathee",
     category: "Dailynews",
   },
+  {
+    _id: "qkxuFKqJXWY",
+    title: "Roommate - Stand Up Comedy Ft. Anubhav Singh Bassi",
+    category: "Standup",
+  },
 ];

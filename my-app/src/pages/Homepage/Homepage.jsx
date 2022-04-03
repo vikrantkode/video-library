@@ -36,8 +36,8 @@ const Homepage = () => {
           </Link>
         </div>
       </div>
-      {showVideoList.slice(0,3).map((video)=><ViCard key={video._id} video={video}/>)}
-      
+  
+      {showVideoList.slice(0,4).map((video)=><ViCard key={video._id} video={video}/>)}
     </div>
   )
 }
