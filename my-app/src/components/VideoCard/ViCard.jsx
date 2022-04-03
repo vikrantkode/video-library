@@ -14,12 +14,12 @@ const ViCard = ({video}) => {
                 <h2 className="title__header">{title}</h2>
                 <h4 className="title__subheading">{`Category : ${category}`}</h4>
             </div>
-            <div class="card_footer">
-                <div class="footer_info">
-                    <span class="btn-footer">{views} views</span>
-                    <span class="btn-footer">{uploaded} hours ago</span>
+            <div className="card_footer">
+                <div className="footer_info">
+                    <span className="btn-footer">{views} views</span>
+                    <span className="btn-footer">{uploaded} hours ago</span>
                 </div>
-                <div class="footer_icons">
+                <div className="footer_icons">
                 <span className="material-icons-outlined vicons">thumb_up</span>
                 <span className="material-icons-outlined vicons">watch_later</span>
                 <span className="material-icons-outlined vicons">playlist_add</span>
