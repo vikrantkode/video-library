@@ -4,7 +4,6 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    // <div className="container">
       <div className="container_sidebar">
         <div className="sidebar_nav">
          <Link to="/"> <div className="sidebar_nav_icons">
@@ -34,7 +33,6 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-    // </div>
   );
 };
 
