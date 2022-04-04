@@ -12,7 +12,7 @@ function Nav() {
         <input className="input_box" type="text" placeholder="Enter text.." />
       </div>
       <div className="header_subcontents">
-        <Link to="/loginpage">
+        <Link to="/login">
         <button className="btn btn-default" id="btn-style">Login</button>
         </Link>
 
