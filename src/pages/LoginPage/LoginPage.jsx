@@ -26,7 +26,7 @@ const LoginPage = () => {
       navigate("/videos")
       console.log(resp)
     } catch(err){
-      alert(`Enter Correct Email & Password : ${err}`)
+      alert(`${err} || Enter Correct Email or Password`)
 
     }
   }
