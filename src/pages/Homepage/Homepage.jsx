@@ -32,6 +32,7 @@ const Homepage = () => {
             Watch, Explore  and  Enjoy
           </p>
           <Link to="/videos">
+
             <button className="btn btn-default">Watch Now</button>
           </Link>
         </div>

@@ -1,3 +1,4 @@
+
 :root {
     --hover-color: #f3f1f1f3;
     --shadow-color: black;
@@ -33,7 +34,7 @@
 
 .title__subheading,
 .content__color {
-    color: var(--card-subheadcolor);
+   color: var(--card-subheadcolor);
 }
 
 .content {
@@ -42,7 +43,6 @@
     margin-bottom: 1rem;
     flex-wrap: wrap;
 }
-
 .card_footer {
     display: flex;
     justify-content: space-around;
@@ -74,4 +74,5 @@
 .vicons {
     margin-right: 0.5rem;
     cursor: pointer;
+
 }

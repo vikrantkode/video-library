@@ -131,5 +131,6 @@ export const videos = [
     duration: "3:18",
     views: "434k",
     uploaded : "9"
+
   },
 ];

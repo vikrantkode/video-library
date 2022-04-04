@@ -6,7 +6,8 @@ const ViCard = ({video}) => {
   return (
     // <div className="parent">
         <div className="card">
-        
+
+
             <div className="image">
                 <img src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`} alt="carosol"/>
             </div>
@@ -14,6 +15,7 @@ const ViCard = ({video}) => {
                 <h2 className="title__header">{title}</h2>
                 <h4 className="title__subheading">{`Category : ${category}`}</h4>
             </div>
+
             <div className="card_footer">
                 <div className="footer_info">
                     <span className="btn-footer">{views} views</span>
@@ -29,6 +31,7 @@ const ViCard = ({video}) => {
         </div>
        
 // </div>
+
   )
 }
 
