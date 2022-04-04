@@ -11,9 +11,7 @@ const VideoListing = () => {
         <Nav/>
         <Sidebar />
         <div className="parent">
-            {/* <div className='card_top'>    */}
-                    {videoList.map((video)=><ViCard key={video._id} video={video}/>)}
-            {/* </div> */}
+             {videoList.map((video)=><ViCard key={video._id} video={video}/>)}
         </div>
     </div>
   )
