@@ -31,7 +31,8 @@ const Homepage = () => {
           <p className="hero_img_tagline sub_tagline">
             Watch, Explore  and  Enjoy
           </p>
-          <Link to="/product">
+          <Link to="/videos">
+
             <button className="btn btn-default">Watch Now</button>
           </Link>
         </div>
