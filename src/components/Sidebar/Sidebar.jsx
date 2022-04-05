@@ -10,10 +10,11 @@ const Sidebar = () => {
             <span className="material-icons-outlined">home</span>
             <p className="sidebar_nav_icons_name">Home</p>
           </div></Link>
+          <Link to="/videos">
           <div className="sidebar_nav_icons">
           <span className="material-icons-outlined">explore</span>
             <p className="sidebar_nav_icons_name">Explore Videos</p>
-          </div>
+          </div></Link>
           <div className="sidebar_nav_icons">
           <span className="material-icons-outlined">playlist_add</span>
             <p className="sidebar_nav_icons_name">Playlist</p>
@@ -23,10 +24,10 @@ const Sidebar = () => {
             <p className="sidebar_nav_icons_name">Watch Later</p>
           </div>
 
-          <div className="sidebar_nav_icons">
-          <span className="material-icons-outlined">thumb_up</span>
+          <Link to="/like/dislike"><div className="sidebar_nav_icons">
+          <span className="material-icons">thumb_up</span>
             <p className="sidebar_nav_icons_name">Liked Videos</p>
-          </div>
+          </div></Link>
           <div className="sidebar_nav_icons">
           <span className="material-icons-outlined">history</span>
             <p className="sidebar_nav_icons_name">History</p>
