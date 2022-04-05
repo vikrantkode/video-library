@@ -2,19 +2,19 @@ import React from "react";
 import "./ViCard.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useLikeDislike } from "../../context/context";
+import { useAuth, useLikeDislike,useWatchLater } from "../../context/context";
 
 const ViCard = ({ video }) => {
   const { likeVideoList, setLikeVideoList } = useLikeDislike();
+  const { watchLater, setWatchLater} = useWatchLater();
   const navigate = useNavigate();
-  const encodedToken = localStorage.getItem("token");
+  const {state: { encodedToken },} = useAuth();
 
-  
+
   const likeClickHandler = async (encodedToken) => {
-    const dataToSend = { video: video };
     if (encodedToken) {
       try {
-        const resp = await axios.post(`/api/user/likes`, dataToSend, {
+        const resp = await axios.post(`/api/user/likes`, {video}, {
           headers: { authorization: encodedToken },
         });
         setLikeVideoList(resp.data.likes);
@@ -25,6 +25,21 @@ const ViCard = ({ video }) => {
       navigate("/login");
     }
   };
+
+
+  const watchLaterClickHandler = async(encodedToken) => {
+    if(encodedToken) {
+      try{
+        const resp = await axios.post(`/api/user/watchlater`,{video},{
+          headers: { authorization: encodedToken },});
+          setWatchLater(resp.data.watchlater)
+      }catch(err){
+        alert(`error from server ${err}`)
+      }
+    }else{
+      navigate("/login");
+    }
+    }
 
   return (
     <div className="card">
@@ -51,8 +66,9 @@ const ViCard = ({ video }) => {
         <span className="material-icons-outlined vicons"onClick={() => likeClickHandler(encodedToken)}>
             thumb_up
           </span>}
-         
-          <span className="material-icons-outlined vicons">watch_later</span>
+         {watchLater.find((e)=>e._id === video._id) ? 
+         <span className="material-icons vicons">watch_later</span> : <span className="material-icons-outlined vicons" onClick={()=> watchLaterClickHandler(encodedToken)}>watch_later</span>}
+          
           <span className="material-icons-outlined vicons">playlist_add</span>
         </div>
       </div>
@@ -61,4 +77,4 @@ const ViCard = ({ video }) => {
     // </div>
   );
 };
-export default ViCard;
+export  {ViCard};

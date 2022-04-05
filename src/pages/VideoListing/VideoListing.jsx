@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '../../components/Nav/Nav'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import ViCard from '../../components/VideoCard/ViCard'
+import {Nav} from '../../components/Nav/Nav'
+import {Sidebar} from '../../components/Sidebar/Sidebar'
+import {ViCard} from '../../components/VideoCard/ViCard'
 import "./VideoListing.css"
 import { useVideoList } from '../../context/Video-Context'
 const VideoListing = () => {
@@ -18,4 +18,4 @@ const VideoListing = () => {
   
 }
 
-export default VideoListing
+export  {VideoListing}

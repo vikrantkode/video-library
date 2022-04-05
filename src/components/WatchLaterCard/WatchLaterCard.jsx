@@ -1,8 +1,7 @@
 import React from "react";
-import "./ViLikeCard.css";
+import "./WatchLaterCard.css";
 
-
-const ViLikeCard = ({ video, dislikeClickHandler }) => {
+const ViWatchLaterCard = ({ video, deleteWatchLaterHandler }) => {
   return (
     <div className="card">
       <div className="image">
@@ -23,8 +22,8 @@ const ViLikeCard = ({ video, dislikeClickHandler }) => {
         </div>
         
         <div className="footer_icons">
-          <span class="material-icons vicons" onClick={() => dislikeClickHandler(video._id)}>thumb_up</span>   
-          <span className="material-icons-outlined vicons">watch_later</span>
+          <span class="material-icons-outlined vicons">thumb_up</span> 
+          <span className="material-icons vicons" onClick={()=>deleteWatchLaterHandler(video._id)}>watch_later</span>
           <span className="material-icons-outlined vicons">playlist_add</span>
         </div>
       </div>
@@ -33,4 +32,4 @@ const ViLikeCard = ({ video, dislikeClickHandler }) => {
     // </div>
   );
 };
-export  {ViLikeCard};
+export  {ViWatchLaterCard};

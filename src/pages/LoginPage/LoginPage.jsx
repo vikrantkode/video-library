@@ -2,7 +2,7 @@ import React from "react";
 import "./LoginPage.css";
 import { useState } from "react";
 import axios from "axios";
-import Nav from '../../components/Nav/Nav'
+import{ Nav} from '../../components/Nav/Nav'
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/context"
 
