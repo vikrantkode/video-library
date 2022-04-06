@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '../../components/Nav/Nav'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import ViLikeCard from '../../components/LikeCard/ViLikeCard'
+import {Nav} from '../../components/Nav/Nav'
+import {Sidebar} from '../../components/Sidebar/Sidebar'
+import {ViLikeCard} from '../../components/LikeCard/ViLikeCard'
 import { useLikeDislike } from '../../context/context';
 import axios from  "axios"
 import { useNavigate } from 'react-router-dom';
@@ -40,4 +40,4 @@ const LikeDislike = () => {
   )
 }
 
-export default LikeDislike
+export  {LikeDislike}

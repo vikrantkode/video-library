@@ -1,9 +1,10 @@
 import {Route, Routes} from "react-router-dom"
-import Homepage from "./pages/Homepage/Homepage";
+import {Homepage} from "./pages/Homepage/Homepage";
 import Mockman from "mockman-js"
-import VideoListing from "./pages/VideoListing/VideoListing";
-import { LoginPage } from "./pages/LoginPage/LoginPage";
-import LikeDislike from "./pages/LikeDislike/LikeDislike";
+import {VideoListing} from "./pages/VideoListing/VideoListing";
+import {LoginPage} from "./pages/LoginPage/LoginPage";
+import {LikeDislike} from "./pages/LikeDislike/LikeDislike";
+import {WatchLater} from "./pages/WatchLater/WatchLater";
 
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
       <Route path = "/videos" element = {<VideoListing />}/> 
       <Route path = "/login" element = {<LoginPage />}/> 
       <Route path = "/like/dislike" element = {<LikeDislike />}/> 
+      <Route path = "/watchLater" element = {<WatchLater />}/> 
 
     </Routes>
   </div>
   )
 }
 
-export default App;
+export  {App};

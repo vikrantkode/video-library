@@ -10,24 +10,28 @@ const Sidebar = () => {
             <span className="material-icons-outlined">home</span>
             <p className="sidebar_nav_icons_name">Home</p>
           </div></Link>
+
           <Link to="/videos">
           <div className="sidebar_nav_icons">
           <span className="material-icons-outlined">explore</span>
             <p className="sidebar_nav_icons_name">Explore Videos</p>
           </div></Link>
-          <div className="sidebar_nav_icons">
-          <span className="material-icons-outlined">playlist_add</span>
-            <p className="sidebar_nav_icons_name">Playlist</p>
-          </div>
-          <div className="sidebar_nav_icons">
-          <span className="material-icons-outlined">watch_later</span>
-            <p className="sidebar_nav_icons_name">Watch Later</p>
-          </div>
 
           <Link to="/like/dislike"><div className="sidebar_nav_icons">
           <span className="material-icons">thumb_up</span>
             <p className="sidebar_nav_icons_name">Liked Videos</p>
           </div></Link>
+
+          <Link to="/watchLater"><div className="sidebar_nav_icons">
+          <span className="material-icons-outlined">watch_later</span>
+            <p className="sidebar_nav_icons_name">Watch Later</p>
+          </div></Link>
+
+          <div className="sidebar_nav_icons">
+          <span className="material-icons-outlined">playlist_add</span>
+            <p className="sidebar_nav_icons_name">Playlist</p>
+          </div>
+
           <div className="sidebar_nav_icons">
           <span className="material-icons-outlined">history</span>
             <p className="sidebar_nav_icons_name">History</p>
@@ -37,4 +41,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export  {Sidebar};

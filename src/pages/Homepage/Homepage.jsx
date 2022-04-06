@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import "./Homepage.css"
-import Nav from '../../components/Nav/Nav'
+import {Nav} from '../../components/Nav/Nav'
 import hero_img from "../../assets/home_img.jpg"
 import { Link } from 'react-router-dom'
-import ViCard from '../../components/VideoCard/ViCard'
+import {ViCard} from '../../components/VideoCard/ViCard'
 import axios from "axios"
 
 
@@ -43,4 +43,4 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export  {Homepage}
