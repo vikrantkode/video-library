@@ -32,10 +32,10 @@ const Sidebar = () => {
             <p className="sidebar_nav_icons_name">Playlist</p>
           </div>
 
-          <div className="sidebar_nav_icons">
+          <Link to="/history"><div className="sidebar_nav_icons">
           <span className="material-icons-outlined">history</span>
             <p className="sidebar_nav_icons_name">History</p>
-          </div>
+          </div></Link>
         </div>
       </div>
   );
