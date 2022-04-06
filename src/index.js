@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import {App} from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
-import { VideoProvider, AuthProvider, LikeDislikeProvider, WatchLaterProvider} from "./context/context";
+import { VideoProvider, AuthProvider, LikeDislikeProvider, WatchLaterProvider, HistoryProvider} 
+        from "./context/context";
 
 
 
@@ -17,7 +18,9 @@ ReactDOM.render(
         <VideoProvider>
           <LikeDislikeProvider>
             <WatchLaterProvider>
-              <App />
+              <HistoryProvider>
+                <App />
+              </HistoryProvider>
             </WatchLaterProvider>
           </LikeDislikeProvider>
         </VideoProvider>

@@ -3,6 +3,8 @@
     --hover-color: #f3f1f1f3;
     --shadow-color: black;
     --card-subheadcolor: gray;
+    --icon-hover:#f5dadaf3;
+
 }
 
 .card {
@@ -77,9 +79,5 @@
 }
 
 .vicons:hover {
-    background-color: #f5dadaf3;
-}
-
-.main_card_content{
-    cursor: pointer;
+    background-color: var(--icon-hover);
 }
