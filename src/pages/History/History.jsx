@@ -34,7 +34,7 @@ const History = () => {
     <Nav />
     <Sidebar />
         <div className="btn_history_container">
-            <button class="btn btn-error" onClick={()=>clearAllClickHandler()}>CLEAR HISTORY</button>
+            <button className="btn btn-error" onClick={()=>clearAllClickHandler()}>CLEAR HISTORY</button>
         </div>
         <div className="parent">
          {historyArr.map((video)=><ViHistoryCard key={video._id} video={video}/>)}

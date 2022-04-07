@@ -5,6 +5,7 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
 import { VideoProvider, AuthProvider, LikeDislikeProvider, WatchLaterProvider, HistoryProvider} 
         from "./context/context";
+import { PlaylistProvider } from "./context/PlayList-Context";
 
 
 
@@ -16,13 +17,15 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <VideoProvider>
-          <LikeDislikeProvider>
-            <WatchLaterProvider>
-              <HistoryProvider>
-                <App />
-              </HistoryProvider>
-            </WatchLaterProvider>
-          </LikeDislikeProvider>
+          <PlaylistProvider>
+            <LikeDislikeProvider>
+              <WatchLaterProvider>
+                <HistoryProvider>
+                  <App />
+                </HistoryProvider>
+              </WatchLaterProvider>
+            </LikeDislikeProvider>
+          </PlaylistProvider>
         </VideoProvider>
       </AuthProvider>
     </BrowserRouter>

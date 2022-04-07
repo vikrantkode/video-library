@@ -1,0 +1,48 @@
+
+.playlist_container{
+    background-color: rgb(227, 218, 218);
+    height: 7rem;
+    width: 240px;
+    border-radius: 4px;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 15%;
+    margin-left: 30%;
+    position: absolute
+}
+
+.items_in_playlist{
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(192, 187, 187);
+}
+
+.dialog_items{
+  margin-left: 2rem;
+  /* font-size: 20px; */
+}
+.dialog_header{
+    width: 15rem;
+    border-bottom: 1px solid rgb(192, 187, 187);
+}
+.dialog_footer{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.dialog_footer_btn{
+    margin-left:auto;
+    cursor: pointer;
+    font-weight:500;
+    border:transparent;
+    position: relative
+
+}
+.playlist_header{
+margin-left: 1rem;
+}
+
