@@ -1,3 +1,24 @@
-## Video Library Backend
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+# Video Library App
+
+A video library app
+
+
+## Tech Stack
+
+**Client:** `ReactJS`, `CSS`, `JWT`
+
+**Hosting Platform:** `Netlify`
+
+
+## Features
+
+- Home Page
+- Video Listing Page
+- Like/Dislike
+- Watch/Dislike
+- Add to Playlist
+- Single video page
+- ahomepage
+- Login
+
