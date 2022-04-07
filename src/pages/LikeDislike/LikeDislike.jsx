@@ -18,9 +18,7 @@ const LikeDislike = () => {
         const resp = await axios.delete(`/api/user/likes/${videoId}`, {
           headers: { authorization: encodedToken },
         });
-        console.log(resp.data.likes);
         setLikeVideoList(resp.data.likes)
-        
       } catch (err) {
         alert(`error from server ${err}`)
       }

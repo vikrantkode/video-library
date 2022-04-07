@@ -35,7 +35,7 @@ const ViHistoryCard = ({ video }) => {
       </div>
 
       <div className="card_footer">
-        <button class="btn btn-error_outline"
+        <button className="btn btn-error_outline"
          onClick={()=>deleteVideoHandler(video._id)}>DELETE</button>
       </div>
     </div>

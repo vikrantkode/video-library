@@ -74,6 +74,7 @@
 .vicons {
     margin-right: 0.5rem;
     cursor: pointer;
+    position: relative;
 }
 
 .vicons:hover {
@@ -82,4 +83,16 @@
 
 .main_card_content{
     cursor: pointer;
+}
+
+.playlist_card_position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    position: fixed;
+    bottom:15%;
+    left:0;
+    right:15%;
+    top:0;
 }

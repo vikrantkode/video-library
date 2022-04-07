@@ -22,7 +22,7 @@ const ViWatchLaterCard = ({ video, deleteWatchLaterHandler }) => {
         </div>
         
         <div className="footer_icons">
-          <span class="material-icons-outlined vicons">thumb_up</span> 
+          <span className="material-icons-outlined vicons">thumb_up</span> 
           <span className="material-icons vicons" onClick={()=>deleteWatchLaterHandler(video._id)}>watch_later</span>
           <span className="material-icons-outlined vicons">playlist_add</span>
         </div>

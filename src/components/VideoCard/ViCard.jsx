@@ -1,90 +1,27 @@
 import React from "react";
 import "./ViCard.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useAuth, useLikeDislike, useWatchLater, useHistory } from "../../context/context";
+import { Link } from "react-router-dom";
+import { useAuth, useLikeDislike, useWatchLater, useHistory, usePlaylistContext }
+        from "../../context/context";
+import { Modal } from "../../components/Modal/Modal";
+
+ 
+
 
 const ViCard = ({ video }) => {
-  const { likeVideoList, setLikeVideoList } = useLikeDislike();
-  const { watchLater, setWatchLater } = useWatchLater();
+  const { likeVideoList, likeClickHandler,dislikeClickHandler } = useLikeDislike();
+  const { watchLater, watchLaterClickHandler,deleteWatchLaterHandler} = useWatchLater();
   const { state: { encodedToken },} = useAuth();
   const {dispatch} = useHistory();
-  const navigate = useNavigate();
 
-
-
-  const likeClickHandler = async (encodedToken) => {
-    if (encodedToken) {
-      try {
-        const resp = await axios.post(
-          `/api/user/likes`,
-          { video },
-          {
-            headers: { authorization: encodedToken },
-          }
-        );
-        setLikeVideoList(resp.data.likes);
-      } catch (err) {
-        alert(`error from server ${err}`);
-      }
-    } else {
-      navigate("/login");
-    }
-  };
-
-  const dislikeClickHandler = async(videoId) => {
-    if (encodedToken) {
-      try {
-        const resp = await axios.delete(`/api/user/likes/${videoId}`, {
-          headers: { authorization: encodedToken },
-        });
-        setLikeVideoList(resp.data.likes) 
-      } catch (err) {
-        alert(`error from server ${err}`)
-      }
-    } else {
-      navigate("/login");
-    }
-  };
-
-  const watchLaterClickHandler = async (encodedToken) => {
-    if (encodedToken) {
-      try {
-        const resp = await axios.post(
-          `/api/user/watchlater`,
-          { video },
-          {
-            headers: { authorization: encodedToken },
-          }
-        );
-        setWatchLater(resp.data.watchlater);
-      } catch (err) {
-        alert(`error from server ${err}`);
-      }
-    } else {
-      navigate("/login");
-    }
-  };
-
-  const deleteWatchLaterHandler = async(videoId) => {
-    if(encodedToken){
-        try{
-          const resp = await axios.delete(`/api/user/watchlater/${videoId}`,{
-              headers: { authorization: encodedToken }})
-              setWatchLater(resp.data.watchlater)
-        }catch(err){
-            alert(`error from server ${err}`)
-        }       
-    }else {
-        navigate("/login")
-    }
-}
+ 
+  const {modalVisibility,setModalVisibility} = usePlaylistContext();
 
   const addToHistoryClickHandler = async(video) =>{
     try{
       const resp = await axios.post(`/api/user/history`,{video},
       { headers: { authorization: encodedToken },})
-      console.log(resp);
       dispatch({type : "ADD_TO_HISTORY", payload : resp.data.history})
     }catch(err){
       console.log(`error from server ${err}`)
@@ -95,16 +32,18 @@ const ViCard = ({ video }) => {
     <div className="card">
 
       <div className="main_card_content" onClick={()=>addToHistoryClickHandler(video)}>
-        <div className="image">
-          <img
-            src={`https://i.ytimg.com/vi/${video._id}/hqdefault.jpg`}
-            alt="carosol"
-          />
-        </div>
-        <div className="title">
-          <h2 className="title__header">{video.title}</h2>
-          <h4 className="title__subheading">{`Category : ${video.category}`}</h4>
-        </div>
+        <Link to={`/videos/${video._id}`}>
+          <div className="image">
+            <img
+              src={`https://i.ytimg.com/vi/${video._id}/hqdefault.jpg`}
+              alt="carosol"
+            />
+          </div>
+          <div className="title">
+            <h2 className="title__header">{video.title}</h2>
+            <h4 className="title__subheading">{`Category : ${video.category}`}</h4>
+          </div>
+        </Link>
       </div>
 
       <div className="card_footer">
@@ -114,16 +53,17 @@ const ViCard = ({ video }) => {
         </div>
 
         <div className="footer_icons">
-          {likeVideoList.find((e) => e._id === video._id) ? (
-            <span class="material-icons vicons"
+          {likeVideoList.some((e) => e._id === video._id) ? (
+            <span className="material-icons vicons"
              onClick={() => dislikeClickHandler(video._id)}>thumb_up</span>
           ) : (
             <span
               className="material-icons-outlined vicons"
-              onClick={() => likeClickHandler(encodedToken)}
+              onClick={() => likeClickHandler(video)}
             >
               thumb_up
             </span>
+
           )}
           {watchLater.find((e) => e._id === video._id) ? (
             <span className="material-icons vicons"
@@ -131,13 +71,17 @@ const ViCard = ({ video }) => {
           ) : (
             <span
               className="material-icons-outlined vicons"
-              onClick={() => watchLaterClickHandler(encodedToken)}
+              onClick={() => watchLaterClickHandler(video)}
             >
               watch_later
             </span>
           )}
 
-          <span className="material-icons-outlined vicons">playlist_add</span>
+          <span className="material-icons-outlined vicons" 
+          onClick={()=>setModalVisibility(!modalVisibility)}>playlist_add</span>
+
+          {modalVisibility && <div className="playlist_card_position"><Modal /></div>}  
+
         </div>
       </div>
     </div>
