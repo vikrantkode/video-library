@@ -25,7 +25,7 @@ const Homepage = () => {
     <div className='container_home'>
       <Nav/>
       <div className='hero_img_container'>
-        <img className='hero_img_width' src={hero_img} alt=""  />
+        <img className='hero_img_width' src={hero_img} alt="Video Libary"  />
         <div className="hero_image_content">
           <h2 className="hero_img_tagline main_tagline">VIDEO LIBRARY </h2>
           <p className="hero_img_tagline sub_tagline">
@@ -36,9 +36,11 @@ const Homepage = () => {
             <button className="btn btn-default">Watch Now</button>
           </Link>
         </div>
+        <h2>Featured Videos</h2>
       </div>
-  
+   
       {showVideoList.slice(0,4).map((video)=><ViCard key={video._id} video={video}/>)}
+
     </div>
   )
 }
