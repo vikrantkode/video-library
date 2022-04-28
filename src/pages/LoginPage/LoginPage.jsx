@@ -106,7 +106,7 @@ const LoginPage = () => {
                 </button>
               </div>
               <p>
-                <Link to="" className="login_form_link">
+                <Link to="/signup" className="login_form_link">
                   Create an Account
                 </Link>
               </p>

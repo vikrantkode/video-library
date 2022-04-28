@@ -6,13 +6,14 @@ import { PlaylistCard } from '../../components/PlaylistCard/PlaylistCard'
 import { usePlaylistContext } from '../../context/context'
 
 const Playlist = () => {
-  const {playListName} = usePlaylistContext();
+  const {playlistState: {playlistArr}} = usePlaylistContext();
+  console.log(playlistArr)
   return (
     <div className='container_playlist'>
       <Nav/>
       <Sidebar />
-      {/* <div class="container_card_playlist"> */}
-        {playListName.map((item)=><PlaylistCard key={item._id} playlist={item}/>)}
+      {/* <div className="container_card_playlist"> */}
+        {playlistArr.map((item)=><PlaylistCard key={item._id} playlist={item}/>)}
       {/* </div> */}
    </div>
   )

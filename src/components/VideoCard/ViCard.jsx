@@ -1,22 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ViCard.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuth, useLikeDislike, useWatchLater, useHistory, usePlaylistContext }
         from "../../context/context";
 import { Modal } from "../../components/Modal/Modal";
 
- 
 
-
-const ViCard = ({ video }) => {
+const ViCard = ({ video, playlistVideoId }) => {
   const { likeVideoList, likeClickHandler,dislikeClickHandler } = useLikeDislike();
   const { watchLater, watchLaterClickHandler,deleteWatchLaterHandler} = useWatchLater();
+  const [ modalVisibility,setModalVisibility ] = useState(false)
   const { state: { encodedToken },} = useAuth();
-  const {dispatch} = useHistory();
+  const { dispatch } = useHistory();
+  const { playlistDispatch } = usePlaylistContext();
+  const { playlistId } = useParams();
 
- 
-  const {modalVisibility,setModalVisibility} = usePlaylistContext();
 
   const addToHistoryClickHandler = async(video) =>{
     try{
@@ -27,8 +26,19 @@ const ViCard = ({ video }) => {
       console.log(`error from server ${err}`)
     }
   }
+  
+  const deleteVideoFromPlaylistClickHandler = async () => {
+    try{
+      const resp = await axios.delete(`/api/user/playlists/${playlistId}/${video._id}`,
+      {headers: {authorization : encodedToken},})
+      console.log(resp)
+      playlistDispatch({type : "DELETE_VIDEO_FROM_PLAYLIST", payload : resp.data.playlists})
+    }catch(err)
+      {console.log(`error from server ${err}`)}
+  }
 
   return (
+    
     <div className="card">
 
       <div className="main_card_content" onClick={()=>addToHistoryClickHandler(video)}>
@@ -71,16 +81,17 @@ const ViCard = ({ video }) => {
           ) : (
             <span
               className="material-icons-outlined vicons"
-              onClick={() => watchLaterClickHandler(video)}
-            >
+              onClick={() => watchLaterClickHandler(video)}>
               watch_later
             </span>
           )}
-
+          {!playlistVideoId ? <span className="material-icons-outlined vicons" 
+          onClick={()=>setModalVisibility(true)}>playlist_add</span> :
           <span className="material-icons-outlined vicons" 
-          onClick={()=>setModalVisibility(!modalVisibility)}>playlist_add</span>
+          onClick={deleteVideoFromPlaylistClickHandler}>delete</span> }
+          
 
-          {modalVisibility && <div className="playlist_card_position"><Modal /></div>}  
+          {modalVisibility && <div className="playlist_card_position"><Modal key={video._id} video={video} setModalVisibility={setModalVisibility} deleteVideoFromPlaylistClickHandler={deleteVideoFromPlaylistClickHandler}/></div>}  
 
         </div>
       </div>
