@@ -27,12 +27,13 @@ const ViCard = ({ video, playlistVideoId }) => {
     }
   }
   
-  const deleteVideoFromPlaylistClickHandler = async () => {
+  const deleteVideoFromPlaylistClickHandler = async (playlistId,videoId) => {
+    console.log("vicard line 30",videoId)
     try{
-      const resp = await axios.delete(`/api/user/playlists/${playlistId}/${video._id}`,
+      const resp = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`,
       {headers: {authorization : encodedToken},})
       console.log(resp)
-      playlistDispatch({type : "DELETE_VIDEO_FROM_PLAYLIST", payload : resp.data.playlists})
+      playlistDispatch({type : "DELETE_VIDEO_FROM_PLAYLIST", payload : {playlistId,videoId}})
     }catch(err)
       {console.log(`error from server ${err}`)}
   }
@@ -88,7 +89,7 @@ const ViCard = ({ video, playlistVideoId }) => {
           {!playlistVideoId ? <span className="material-icons-outlined vicons" 
           onClick={()=>setModalVisibility(true)}>playlist_add</span> :
           <span className="material-icons-outlined vicons" 
-          onClick={deleteVideoFromPlaylistClickHandler}>delete</span> }
+          onClick={()=>deleteVideoFromPlaylistClickHandler(playlistId,video._id)}>delete</span> }
           
 
           {modalVisibility && <div className="playlist_card_position"><Modal key={video._id} video={video} setModalVisibility={setModalVisibility} deleteVideoFromPlaylistClickHandler={deleteVideoFromPlaylistClickHandler}/></div>}  

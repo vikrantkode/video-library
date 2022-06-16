@@ -68,7 +68,7 @@ const SingleVideo = () => {
                 watch_later
               </span>
             )}
-            <span className="material-icons-outlined vicons">playlist_add</span>
+            {/* <span className="material-icons-outlined vicons">playlist_add</span> */}
           </div>
         </div>
       </div>
