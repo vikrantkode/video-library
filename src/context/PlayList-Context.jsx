@@ -21,7 +21,6 @@ const PlaylistProvider = ({children}) =>{
                 const resp = await axios.post(`/api/user/playlists`,{
                     playlist: {title: playlistTitleName, description:"Default playlist" }},
                     {headers: { authorization: encodedToken },})
-                 console.log(resp)
                  playlistDispatch({type : "CREATE_PLAYLIST",  payload : resp.data.playlists})
             }catch(err){
                 console.log(`error from server ${err}`)

@@ -7,7 +7,6 @@ import { usePlaylistContext } from '../../context/context'
 
 const Playlist = () => {
   const {playlistState: {playlistArr}} = usePlaylistContext();
-  console.log(playlistArr)
   return (
     <div className='container_playlist'>
       <Nav/>

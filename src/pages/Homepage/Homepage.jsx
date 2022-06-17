@@ -14,7 +14,6 @@ const Homepage = () => {
    try {
      const resp = await axios.get(`/api/videos`)
      setShowVideoList(resp.data.videos)
-     console.log(resp.data.videos)
    } catch (error) {
      console.log(error)
    }

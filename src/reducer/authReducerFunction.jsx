@@ -1,5 +1,4 @@
 const authReducerFunction = (state,action) => {
-    console.log(state,action)
  switch(action.type){
      case "SUCCESS":{
         return {...state, encodedToken: action.payload, isLoggedIn:true}

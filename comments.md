@@ -5,4 +5,4 @@ Signup Auth Added
 favicon added
 
 new : delete video after incheck from playlist
-new : removed seaech bar
+new : removed search bar

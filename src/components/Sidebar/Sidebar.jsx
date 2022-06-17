@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
       <div className="container_sidebar">
         <div className="sidebar_nav">
-         <NavLink to="/" activeClassName="active-link"> 
+         <NavLink to="/" activeclassname="active-link"> 
             <div className="sidebar_nav_icons">
               <span className="material-icons-outlined">home</span>
               <p className="sidebar_nav_icons_name">Home</p>
