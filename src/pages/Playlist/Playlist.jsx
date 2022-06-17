@@ -6,6 +6,7 @@ import { PlaylistCard } from '../../components/PlaylistCard/PlaylistCard'
 import { usePlaylistContext } from '../../context/context'
 
 const Playlist = () => {
+  
   const {playlistState: {playlistArr}} = usePlaylistContext();
   return (
     <div className='container_playlist'>

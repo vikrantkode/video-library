@@ -27,10 +27,12 @@ const ViCard = ({ video, playlistVideoId }) => {
     }
   }
   
+  
   const deleteVideoFromPlaylistClickHandler = async (playlistId,videoId) => {
     try{
       const resp = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`,
       {headers: {authorization : encodedToken},})
+      console.log(resp)
       playlistDispatch({type : "DELETE_VIDEO_FROM_PLAYLIST", payload : {playlistId,videoId}})
     }catch(err)
       {console.log(`error from server ${err}`)}
