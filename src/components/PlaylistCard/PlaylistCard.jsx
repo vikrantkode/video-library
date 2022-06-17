@@ -1,17 +1,32 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { usePlaylistContext } from "../../context/context";
 import "./PlaylistCard.css";
 
 const PlaylistCard = ({ playlist }) => {
-
-
-  const {addVideoInPlaylist,deletePlaylist} = usePlaylistContext();
+  const navigate = useNavigate();
+  const { deletePlaylist } = usePlaylistContext();
   return (
-    <div class="playlist_card">
-      <h2>{playlist.title}</h2>
-      <h3>{playlist.videos.length}</h3>
-      <button class="btn btn-success_outline" onClick={()=>addVideoInPlaylist()}>OPEN</button>
-      <button class="btn btn-error_outline" onClick={()=>deletePlaylist(playlist)}>DELETE</button>
+    <div className="card">
+      <div
+        className="main_card_content"
+        onClick={() => navigate(`/playlist/${playlist._id}`)} >
+        <div className="image playlist_thumbnail">
+          <img className="playlist_thumbnail"
+            src={`${playlist.videos.length > 0 && `https://i.ytimg.com/vi/${playlist.videos[0]._id}/hqdefault.jpg`}`}
+            alt="playlistcard"
+          />
+        </div>
+      </div>
+
+      <div className="card_footer">
+        <div className="footer_info">
+        <span className="btn-footer"><b>Playlist : {playlist.title}</b></span>
+        <span className="btn-footer"><b>{playlist.videos.length} videos</b> </span>
+        <span className="material-icons-outlined vicons" 
+           onClick={() => deletePlaylist(playlist)}>delete</span> 
+        </div>
+      </div>
     </div>
   );
 };

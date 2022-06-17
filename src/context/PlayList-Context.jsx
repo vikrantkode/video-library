@@ -1,25 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth} from "./context";
 import axios from "axios"
+import { useReducer } from "react";
+import { playlistReducerFunction } from "../reducer/playlistReducerFunction";
 
 const PlaylistContext = createContext();
 
+
 const PlaylistProvider = ({children}) =>{
-    const [playListName, setPlayListName] = useState([]);
-    const [modalVisibility,setModalVisibility] = useState(false)
+    const [ playlistState, playlistDispatch] = useReducer(playlistReducerFunction,{playlistArr:[]})
     const { state: { encodedToken },} = useAuth();
     const navigate = useNavigate();
 
-    const addPlaylist = async(title) =>{
+
+
+    const createPlaylist = async(playlistTitleName) =>{
         if(encodedToken){
             try{
                 const resp = await axios.post(`/api/user/playlists`,{
-                    playlist: {title: title, description:"Default playlist" }},
+                    playlist: {title: playlistTitleName, description:"Default playlist" }},
                     {headers: { authorization: encodedToken },})
-                 console.log(resp)
-                 setPlayListName(resp.data.playlists)
-                 setModalVisibility(false)
+                 playlistDispatch({type : "CREATE_PLAYLIST",  payload : resp.data.playlists})
             }catch(err){
                 console.log(`error from server ${err}`)
             }
@@ -28,25 +30,22 @@ const PlaylistProvider = ({children}) =>{
         }
     }
     const deletePlaylist = async (playlist) => {
-        console.log(playlist)
         try {   
           const resp = await axios.delete(`/api/user/playlists/${playlist._id}`,
            {headers: { authorization: encodedToken },});
-           setPlayListName(resp.data.playlists)
+           playlistDispatch({type: "DELETE_PLAYLIST", payload : resp.data.playlists})
         } catch (err) {
           console.log(`error from server ${err}`);
         }
       };
 
-    const addVideoInPlaylist = async(video , playlist) =>{
+    const addVideoInPlaylist = async(playlist,video) =>{
         if(encodedToken){
             try{
                 const resp = await axios.post(`/api/user/playlists/${playlist._id}`,
                     {video},
                     {headers: { authorization: encodedToken },})
-                 console.log(resp)
-                 setPlayListName(resp.data.playlists)
-                 setModalVisibility(false)
+                    playlistDispatch({type :"ADD_VIDEO_TO_PLAYLIST", payload: resp.data.playlists})
             }catch(err){
                 console.log(`error from server ${err}`)
             }
@@ -55,10 +54,10 @@ const PlaylistProvider = ({children}) =>{
         }
     }
 
-    return  <PlaylistContext.Provider
-        value={{playListName, setPlayListName, addPlaylist,modalVisibility,setModalVisibility,addVideoInPlaylist,deletePlaylist}}>
+    return ( <PlaylistContext.Provider
+        value={{playlistState, playlistDispatch ,createPlaylist,addVideoInPlaylist,deletePlaylist}}>
             {children}
-        </PlaylistContext.Provider>
+        </PlaylistContext.Provider>)
 }
 
 const usePlaylistContext = () => useContext(PlaylistContext)

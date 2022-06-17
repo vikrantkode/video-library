@@ -1,11 +1,16 @@
 import React from 'react'
+import "./VideoListing.css"
 import {Nav} from '../../components/Nav/Nav'
 import {Sidebar} from '../../components/Sidebar/Sidebar'
 import {ViCard} from '../../components/VideoCard/ViCard'
-import "./VideoListing.css"
 import { useVideoList } from '../../context/Video-Context'
+
+
+
+
 const VideoListing = () => {
-    const {videoList} = useVideoList();
+  const {videoList} = useVideoList();
+    
   return (
     <div className='container_videolist '>
         <Nav/>

@@ -19,6 +19,16 @@
     font-weight:bold;
 }
 
+.active-link{
+   color: black;
+   font-weight: bolder;
+   font-size: large;
+}
+
+.active{
+    background-color: rgb(189, 185, 185);
+    color: black;
+}
 .sidebar_nav_icons:hover {
     background-color: rgb(231, 227, 227);
     border-radius: 0.4rem;

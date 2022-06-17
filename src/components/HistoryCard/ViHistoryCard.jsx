@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory, useAuth } from "../../context/context";
 import "./ViHistoryCard.css";
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 
 const ViHistoryCard = ({ video }) => {
@@ -23,20 +24,22 @@ const ViHistoryCard = ({ video }) => {
   
   return (
     <div className="card">
-      <div className="image">
-        <img
-          src={`https://i.ytimg.com/vi/${video._id}/hqdefault.jpg`}
-          alt="carosol"
-        />
-      </div>
-      <div className="title">
-        <h2 className="title__header">{video.title}</h2>
-        <h4 className="title__subheading">{`Category : ${video.category}`}</h4>
-      </div>
+        <Link to={`/videos/${video._id}`}>
+          <div className="image">
+            <img
+              src={`https://i.ytimg.com/vi/${video._id}/hqdefault.jpg`}
+              alt="carosol"
+            />
+          </div>
+          <div className="title">
+            <h2 className="title__header">{video.title}</h2>
+            <h4 className="title__subheading">{`Category : ${video.category}`}</h4>
+          </div>
+       </Link>
 
       <div className="card_footer">
         <button className="btn btn-error_outline"
-         onClick={()=>deleteVideoHandler(video._id)}>DELETE</button>
+         onClick={()=>deleteVideoHandler(video._id)}>REMOVE FROM HISTORY</button>
       </div>
     </div>
   );

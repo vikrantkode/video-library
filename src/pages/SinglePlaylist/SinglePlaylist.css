@@ -1,4 +1,4 @@
-.container_history {
+.container_singleplaylist {
     display: grid;
     gap: 20px;
   
@@ -15,20 +15,14 @@
   .largest_header {
     margin-left: 1rem;
   }
-
-  /* .timepass{
-    display: flex;
-    flex-direction: column;
-  } */
-  
+  .container_card_playlist{
+    border: 1px solid black;
+    }
   .parent {
     grid-area: main;
     gap: 3rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+  
   }
-
-  /* .btn_history_container{
-    grid-area: nav;
-  } */

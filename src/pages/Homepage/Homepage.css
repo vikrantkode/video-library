@@ -11,9 +11,9 @@
      
       "head    head    head     head    head"
       "section section section section  section"
-      "....    main    main    main      ....."
-      ".....   main    main    main      ....."
-      "footer footer  footer   footer    footer"
+      "....    main    main    main     ....."
+      ".....   main    main    main     ....."
+      "footer footer  footer   footer   footer"
   
   }
 
@@ -21,6 +21,7 @@
       grid-area: section;
       position: relative;
       height: 80vh;
+      margin-bottom: 4rem;
   }
 
   .hero_img_width{
@@ -32,7 +33,7 @@
   }
 
   
-.hero_image_content {
+  .hero_image_content {
     position: absolute;
     display: block;
     top: 40%;
