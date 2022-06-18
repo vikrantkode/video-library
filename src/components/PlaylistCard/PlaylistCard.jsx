@@ -12,10 +12,18 @@ const PlaylistCard = ({ playlist }) => {
         className="main_card_content"
         onClick={() => navigate(`/playlist/${playlist._id}`)} >
         <div className="image playlist_thumbnail">
-          <img className="playlist_thumbnail"
-            src={`${playlist.videos.length > 0 && `https://i.ytimg.com/vi/${playlist.videos[0]._id}/hqdefault.jpg`}`}
-            alt="playlistcard"
-          />
+          {playlist?.videos.length === 0 
+          ? ( <img className="playlist_thumbnail"
+                src={`https://i.ytimg.com/vi/Sxjo5MySQFI/hq720.jpg`}
+                alt="playlistcard"
+              />
+            )
+          :  <img className="playlist_thumbnail"
+                src={`${playlist.videos.length > 0 && `https://i.ytimg.com/vi/${playlist.videos[0]._id}/hqdefault.jpg`}`}
+                alt="playlistcard"
+             />
+          }
+         
         </div>
       </div>
 
